@@ -3,9 +3,14 @@ services:
   users:
     build: './'
     ports:
-      - '3002:3002'
+      - '3004:3004'
     networks:
       - ms_network
+    deploy:
+        resources:
+            limits:
+              cpus: 0.25
+              memory: 500M
 networks:
   ms_network:
     driver: bridge
